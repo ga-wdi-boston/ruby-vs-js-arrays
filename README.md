@@ -6,10 +6,11 @@
 
 By the end of this, students should be able to:
 
-- Create an Array.
-- Add elements to an Array.
-- Access elements from an Array.
-- Use multiple Array methods
+- Create a Ruby Array.
+- Assign an element at a specific index in a Ruby Array.
+- Access elements by index in a Ruby Array.
+- Add elements to and remove elements from the end of a Ruby Array.
+- Add elements to and remove elements from the beginning of a Ruby Array.
 
 ## Arrays
 
