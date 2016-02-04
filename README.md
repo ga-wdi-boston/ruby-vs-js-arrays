@@ -6,7 +6,7 @@
 
 By the end of this, students should be able to:
 
-- Create a Ruby Array.
+- Create a Ruby Array using both the literal (`[]`) and `new` constructors.
 - Assign an element at a specific index in a Ruby Array.
 - Access elements by index in a Ruby Array.
 - Add elements to and remove elements from the end of a Ruby Array.
