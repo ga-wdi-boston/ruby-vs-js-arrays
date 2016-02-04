@@ -6,6 +6,7 @@
 
 By the end of this, students should be able to:
 
+- Constrast Ruby Arrays with JavaScript Arrays.
 - Create a Ruby Array using both the literal (`[]`) and `new` constructors.
 - Assign an element at a specific index in a Ruby Array.
 - Access elements by index in a Ruby Array.
