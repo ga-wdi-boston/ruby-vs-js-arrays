@@ -21,11 +21,11 @@ By the end of this, students should be able to:
 
 In Ruby, "Arrays are ordered, integer-indexed collections of any object."  From that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like JavaScript Arrays.  But there are some important differences.
 
-### Creating a Ruby Array
+## Creating a Ruby Array
 
 As with JavaScript, Ruby Arrays can be created using literals (technically, a constructor method on class Array) and with a constructor.
 
-#### Demonstration
+### Demonstration
 
 ```ruby
 > developers = []
@@ -50,21 +50,21 @@ If all of the entries are strings, Ruby provides a (Perl inspired) string [quoti
 => ["Ken", "Keven", "Khanhnhat", "Kyle"]
 ```
 
-#### Code along
+### Code along
 
 Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new) to create some initialized arrays in `bin/code_along.rb`.  [Creating Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays) has an important caveat when creating Ruby Arrays with default values.
 
 How does this compare with [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) JavaScript Arrays?  How could we accomplish the same things with JavaScript Arrays?
 
-#### Lab
+### Lab
 
 In `bin/lab.rb` use `Array.new` to create a Ruby Array with ten elements where elements with an even index are equal to the index multiplied by 2 and elements with and odd index are equal to the square of the index.  Store the result and display it on the console with `p <array name>`.
 
 In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
 
-### Assigning and accessing elements in a Ruby Array
+## Assigning and accessing elements in a Ruby Array
 
-#### Demonstration
+### Demonstration
 
 Let's explore [`Array#[]`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D) (Element Reference) and [`Array#[]=`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D-3D) (Element Assignment) methods.
 
@@ -88,11 +88,11 @@ from (pry):4:in ``__pry__''
 => "Aaron"
 ```
 
-#### Code along
+### Code along
 
 We'll work in `bin/code_along.rb` again, modifying and retrieving values from the Arrays we created previously.
 
-#### Lab
+### Lab
 
 Working in `bin/lab.rb` (storing the results of any access in `tmp` for display):
 
@@ -104,9 +104,9 @@ Working in `bin/lab.rb` (storing the results of any access in `tmp` for display)
 
 In `bin/lab.js` do the same in JavaScript.
 
-### Using a Ruby Array as a stack or queue
+## Using a Ruby Array as a stack or queue
 
-#### Demonstration
+### Demonstration
 
 Let's explore [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C) (Append - also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C)), [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop), [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift), [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift).
 
@@ -131,11 +131,11 @@ Let's explore [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C
 => ["Aaron", "Andrew", "Billy", "Celena", "Ethan"]
 ```
 
-#### Code along
+### Code along
 
 We'll work in `bin/code_along.rb` again, adding values to, removing values from, and moving values in the Arrays we created previously.
 
-#### Lab
+### Lab
 
 In `lab.md` describe the differences between the Array methods `push`, `pop`, `unshift`, and `shift` in Ruby and JavaScript.
 
