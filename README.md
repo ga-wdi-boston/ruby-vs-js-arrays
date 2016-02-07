@@ -1,157 +1,145 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
-# Ruby Arrays
+# Ruby Arrays (versus JavaScript Arrays)
+
+## Instructions
+
+Fork, clone, branch (training), `bundle install`
 
 ## Objectives
 
 By the end of this, students should be able to:
 
-- Constrast Ruby Arrays with JavaScript Arrays.
+- Contrast Ruby Arrays with JavaScript Arrays.
 - Create a Ruby Array using both the literal (`[]`) and `new` constructors.
 - Assign an element at a specific index in a Ruby Array.
 - Access elements by index in a Ruby Array.
 - Add elements to and remove elements from the end of a Ruby Array.
 - Add elements to and remove elements from the beginning of a Ruby Array.
 
-## Arrays
+## Introduction
 
-Ruby Arrays are collection of elements that are indexed by integers, *Fixnum objects*. 
+In Ruby, "Arrays are ordered, integer-indexed collections of any object."  From that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like JavaScript Arrays.  But there are some important differences.
 
-### Creation and Accessing Elements  
+### Creating a Ruby Array
 
-> Create a file `demo/array_simple.rb` and run it.  
+As with JavaScript, Ruby Arrays can be created using literals (technically, a constructor method on class Array) and with a constructor.
 
-```ruby
-# Create an empty array
-a1 = Array.new
-puts "a1 is #{a1}"
-
-# Create an empty array using literal syntax
-a2 = []
-puts "a2 is #{a2}"
-
-brothers = ['Joe', 'Mike', 'Tom', 'Ed']
-puts "brothers are #{brothers}"
-
-# Array elements can be accessed by index
-puts "The third element is #{brothers[2]}"
-
-# Notice index starts at zero!
-
-# Arrays can have elements of different types
-a4 = [ "the", "bird", 42, [], 77.78 ]
-puts "a4 is #{a4}"
-
-# More ways to access elements
-
-# Access three elements starting at index 2
-puts "a4[2,3] = #{a4[2,3]}"
-
-# Access last element, yep negative indexes from end
-puts "a4[-1] = #{a4[-1]}"
-
-# Length of array
-puts "a4.size is = #{a4.size}"
-puts "a4.length is = #{a4.length}"
-
-```
-### You Do
-
-Create and array with 6 elements, all of different types. Access the first, last and third elements using the above operators and bracket syntax.
-
-### Modifying Arrays
-
-> Create a file `demo/array_modify.rb` and run it.
+#### Demonstration
 
 ```ruby
-# Shovel operator, <<, concatenates to array
-puts "a4 << 'jack' = #{a4 << 'jack'}"
-puts "a4 is now = #{a4}"
-
-# Pop last element off the array
-puts "a4.pop = #{a4.pop}"
-# last element goneso"
-puts "a4 is now = #{a4}"
-
-# Push element onto an array
-puts "a4.push('mark') = #{a4.push('mark')}"
-puts "a4 is now = #{a4}"
-
-# Shift first element out of the array
-puts "a4.shift = #{a4.shift}"
-puts "a4 is now = #{a4}"
-
-# Unshift into the first element of the array
-puts "a4.unshift = #{a4.unshift(357)}"
-puts "a4 is now = #{a4}"
-
-# Quick way to create a array of strings
-# See no quotes or commas needed!
-str_array = %w{ this is an array of strings }
-puts "str_array is #{str_array}"
-
-# intersection of two arrays, AND operator
-inter_array = %w{ foo bar tom} & %w{ tom joe}
-puts "inter_array = #{inter_array}"
-
-# union of two arrays
-union_array = %w{ foo bar tom} | %w{ tom joe}
-puts "union_array = #{union_array}"
-
-# difference btw two arrays
-diff_array = %w{ foo bar tom} - %w{ tom joe} # => ["foo", "bar"]
-puts "diff_array = #{diff_array}"
-
-# flatten an array of arrays
-array_array = [[1, 3, 8], ['joe', 'terri', 'marianne']]
-puts "array_array.flatten = #{array_array.flatten}"
-
-# didn't change the array
-puts "array_array = #{array_array}"
-
-# flatten and replace, (bang, bang)
-puts "array_array.flatten = #{array_array.flatten!}"
-
-# DID change the array
-puts "array_array = #{array_array}"
-
-array_races = ['one', 'day', 'at', 'the', 'races']
-puts "array_races = #{array_races}"
-
-puts "array_races.join(' ') = #{array_races.join(' ')}"
-puts "array_races.join(', ') = #{array_races.join(', ')}"
+> developers = []
+=> []
+> developers = Array.new
+=> []
 ```
 
-### You Do
-
-Create arrays and modify them using the above methods and operators.
-
-### Find in Array
-
-> Create a file `demo/array_find.rb` and run it.
-> 
-> 
+With the literal syntax, we can create an array with initial values.
 
 ```ruby
-require 'date'
-
-a6 = [33, "cat", Date.today.year, 'fish', 5.8, Date.today.day]
-
-puts "a6 = #{a6}"
-puts "a6.index('cat') = #{a6.index('cat')}"
-
-puts "a6.include?('fish') = #{a6.include?('fish')}"
-
-element = a6.find{|el| el == 'cat'}
-puts "a6.find{|el| el == 'cat'} is #{element}"
-
-elements = a6.find_all{|el| el.class == Fixnum }
-puts "a6.find_all{|el| el.class == Fixnum } is #{elements}"
-
-elements = a6.select{|el| el.class == Fixnum }
-puts "a6.select{|el| el.class == Fixnum } is #{elements}"
+> not_the_same_type = [[], 'one', 2.0, 3]
+=> [[], "one", 2.0, 3]
+> developers = ['Ken', 'Keven', 'Khanhnhat', 'Kyle']
+=> ["Ken", "Keven", "Khanhnhat", "Kyle"]
 ```
 
-## Resources
+If all of the entries are strings, Ruby provides a (Perl inspired) string [quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation) mechanism to create an Array.
 
-- [Ruby Arrays](http://docs.ruby-lang.org/en/2.0.0/Array.html)
+```ruby
+> developers = %w{Ken Keven Khanhnhat Kyle}
+=> ["Ken", "Keven", "Khanhnhat", "Kyle"]
+```
+
+#### Code along
+
+Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new) to create some initialized arrays in `bin/code_along.rb`.  [Creating Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays) has an important caveat when creating Ruby Arrays with default values.
+
+How does this compare with [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) JavaScript Arrays?  How could we accomplish the same things with JavaScript Arrays?
+
+#### Lab
+
+In `bin/lab.rb` use `Array.new` to create a Ruby Array with ten elements where elements with an even index are equal to the index multiplied by 2 and elements with and odd index are equal to the square of the index.  Store the result and display it on the console with `p <array name>`.
+
+In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
+
+### Assigning and accessing elements in a Ruby Array
+
+#### Demonstration
+
+Let's explore [`Array#[]`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D) (Element Reference) and [`Array#[]=`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D-3D) (Element Assignment) methods.
+
+```ruby
+> developers[0]
+=> "Ken"
+developers[-1]
+=> "Kyle"
+> developers[-4] == developers[0]
+=> true
+> developers[developers.length]
+=> nil
+> developers[-5]
+=> nil
+> developers[-3, 2]
+=> ["Keven", "Khanhnhat"]
+> developers[-5] = 'Aaron'
+IndexError: index -5 too small for array; minimum: -4
+from (pry):4:in ``__pry__''
+> developers[developers.length] = 'Aaron'
+=> "Aaron"
+```
+
+#### Code along
+
+We'll work in `bin/code_along.rb` again, modifying and retrieving values from the Arrays we created previously.
+
+#### Lab
+
+Working in `bin/lab.rb` (storing the results of any access in `tmp` for display):
+
+- Assign `20` to the element at `length+1`.
+- Access the 3rd element from the end for a length of 5.
+- Access element 19 for a length of 5 elements.
+- Assign `[-12, -49]` to the 5th element from the end for a length of 3.
+- Access all the elements starting at index 1.
+
+In `bin/lab.js` do the same in JavaScript.
+
+### Using a Ruby Array as a stack or queue
+
+#### Demonstration
+
+Let's explore [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C) (Append - also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C)), [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop), [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift), [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift).
+
+```ruby
+> developers << "Andrew"
+=> ["Ken", "Keven", "Khanhnhat", "Kyle", "Aaron", "Andrew"]
+> developers.push "Billy"
+=> ["Ken", "Keven", "Khanhnhat", "Kyle", "Aaron", "Andrew", "Billy"]
+> developers << "Celena" << "Ethan"
+=> ["Ken",
+ "Keven",
+ "Khanhnhat",
+ "Kyle",
+ "Aaron",
+ "Andrew",
+ "Billy",
+ "Celena",
+ "Ethan"]
+> developers.shift 4
+=> ["Ken", "Keven", "Khanhnhat", "Kyle"]
+> developers
+=> ["Aaron", "Andrew", "Billy", "Celena", "Ethan"]
+```
+
+#### Code along
+
+We'll work in `bin/code_along.rb` again, adding values to, removing values from, and moving values in the Arrays we created previously.
+
+#### Lab
+
+In `lab.md` describe the differences between the Array methods `push`, `pop`, `unshift`, and `shift` in Ruby and JavaScript.
+
+## [License](LICENSE)
+
+Source code distributed under the MIT license. Text and other assets copyright
+General Assembly, Inc., all rights reserved.
