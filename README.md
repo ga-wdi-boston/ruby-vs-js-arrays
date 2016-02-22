@@ -25,7 +25,7 @@ In Ruby, "Arrays are ordered, integer-indexed collections of any object."  From 
 
 As with JavaScript, Ruby Arrays can be created using literals (technically, a constructor method on class Array) and with a constructor.
 
-### Demonstration
+### Demonstrationaini
 
 ```ruby
 > developers = []
@@ -39,15 +39,15 @@ With the literal syntax, we can create an array with initial values.
 ```ruby
 > not_the_same_type = [[], 'one', 2.0, 3]
 => [[], "one", 2.0, 3]
-> developers = ['Ken', 'Keven', 'Khanhnhat', 'Kyle']
-=> ["Ken", "Keven", "Khanhnhat", "Kyle"]
+> developers = ['Ken', 'Kevin', 'Khanhnhat', 'Kyle']
+=> ["Ken", "Kevin", "Khanhnhat", "Kyle"]
 ```
 
 If all of the entries are strings, Ruby provides a (Perl inspired) string [quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation) mechanism to create an Array.
 
 ```ruby
-> developers = %w{Ken Keven Khanhnhat Kyle}
-=> ["Ken", "Keven", "Khanhnhat", "Kyle"]
+> developers = %w{Ken Kevin Khanhnhat Kyle}
+=> ["Ken", "Kevin", "Khanhnhat", "Kyle"]
 ```
 
 ### Code along
@@ -80,7 +80,7 @@ developers[-1]
 > developers[-5]
 => nil
 > developers[-3, 2]
-=> ["Keven", "Khanhnhat"]
+=> ["Kevin", "Khanhnhat"]
 > developers[-5] = 'Aaron'
 IndexError: index -5 too small for array; minimum: -4
 from (pry):4:in ``__pry__''
@@ -112,12 +112,12 @@ Let's explore [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C
 
 ```ruby
 > developers << "Andrew"
-=> ["Ken", "Keven", "Khanhnhat", "Kyle", "Aaron", "Andrew"]
+=> ["Ken", "Kevin", "Khanhnhat", "Kyle", "Aaron", "Andrew"]
 > developers.push "Billy"
-=> ["Ken", "Keven", "Khanhnhat", "Kyle", "Aaron", "Andrew", "Billy"]
+=> ["Ken", "Kevin", "Khanhnhat", "Kyle", "Aaron", "Andrew", "Billy"]
 > developers << "Celena" << "Ethan"
 => ["Ken",
- "Keven",
+ "Kevin",
  "Khanhnhat",
  "Kyle",
  "Aaron",
@@ -126,7 +126,7 @@ Let's explore [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C
  "Celena",
  "Ethan"]
 > developers.shift 4
-=> ["Ken", "Keven", "Khanhnhat", "Kyle"]
+=> ["Ken", "Kevin", "Khanhnhat", "Kyle"]
 > developers
 => ["Aaron", "Andrew", "Billy", "Celena", "Ethan"]
 ```
