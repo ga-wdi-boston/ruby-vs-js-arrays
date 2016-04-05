@@ -98,7 +98,7 @@ Working in `bin/lab.rb` (storing the results of any access in `tmp` for display)
 
 - Assign `20` to the element at `length+1`.
 - Access the 3rd element from the end for a length of 5.
-- Access element 19 for a length of 5 elements.
+- Access element 9 for a length of 5 elements.
 - Assign `[-12, -49]` to the 5th element from the end for a length of 3.
 - Access all the elements starting at index 1.
 
