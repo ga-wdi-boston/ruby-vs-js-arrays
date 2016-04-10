@@ -10,22 +10,25 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, students should be able to:
 
-- Contrast Ruby Arrays with JavaScript Arrays.
-- Create a Ruby Array using both the literal (`[]`) and `new` constructors.
-- Assign an element at a specific index in a Ruby Array.
-- Access elements by index in a Ruby Array.
-- Add elements to and remove elements from the end of a Ruby Array.
-- Add elements to and remove elements from the beginning of a Ruby Array.
+-   Contrast Ruby Arrays with JavaScript Arrays.
+-   Create a Ruby Array using both the literal (`[]`) and `new` constructors.
+-   Assign an element at a specific index in a Ruby Array.
+-   Access elements by index in a Ruby Array.
+-   Add elements to and remove elements from the end of a Ruby Array.
+-   Add elements to and remove elements from the beginning of a Ruby Array.
 
 ## Introduction
 
-In Ruby, "Arrays are ordered, integer-indexed collections of any object."  From that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like JavaScript Arrays.  But there are some important differences.
+In Ruby, "Arrays are ordered, integer-indexed collections of any object."
+From that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like JavaScript Arrays.
+But there are some important differences.
 
 ## Creating a Ruby Array
 
-As with JavaScript, Ruby Arrays can be created using literals (technically, a constructor method on class Array) and with a constructor.
+As with JavaScript, Ruby Arrays can be created using literals (technically, a
+constructor method on class Array) and with a constructor.
 
-### Demonstrationaini
+### Demonstration
 
 ```ruby
 > developers = []
@@ -39,26 +42,36 @@ With the literal syntax, we can create an array with initial values.
 ```ruby
 > not_the_same_type = [[], 'one', 2.0, 3]
 => [[], "one", 2.0, 3]
-> developers = ['Ken', 'Kevin', 'Khanhnhat', 'Kyle']
-=> ["Ken", "Kevin", "Khanhnhat", "Kyle"]
+> developers = ['Roberto', 'Ben', 'Susan', 'Nick']
+=> ["Roberto", "Ben", "Susan", "Nick"]
 ```
 
-If all of the entries are strings, Ruby provides a (Perl inspired) string [quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation) mechanism to create an Array.
+If all of the entries are strings, Ruby provides a (Perl inspired) string
+ [quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation) mechanism to create an Array.
 
 ```ruby
-> developers = %w{Ken Kevin Khanhnhat Kyle}
-=> ["Ken", "Kevin", "Khanhnhat", "Kyle"]
+> developers = %w{Roberto Ben Susan Nick}
+=> ["Roberto", "Ben", "Susan", "Nick"]
 ```
 
 ### Code along
 
 Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new) to create some initialized arrays in `bin/code_along.rb`.  [Creating Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays) has an important caveat when creating Ruby Arrays with default values.
 
-How does this compare with [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) JavaScript Arrays?  How could we accomplish the same things with JavaScript Arrays?
+-   Create an empty array, `lit_array`, using the literal syntax
 
-### Lab
+-   Create an array, `constr_array`, using the constructor syntax, initialized
+with 5 elements
 
-In `bin/lab.rb` use `Array.new` to create a Ruby Array with ten elements where elements with an even index are equal to the index multiplied by 2 and elements with and odd index are equal to the square of the index.  Store the result and display it on the console with `p <array name>`.
+-   Create an array, `ten_false_array`, initialized with 10 `false` elements
+
+How does this compare with [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) JavaScript Arrays?
+
+### Lab 1
+
+In `bin/lab.rb` use a block initializer with `Array.new` to create a Ruby Array
+ with ten elements where elements are equal to their index multiplied by 2.
+ Store the result and display it on the console with `p <array name>`.
 
 In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
 
@@ -66,13 +79,16 @@ In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
 
 ### Demonstration
 
-Let's explore [`Array#[]`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D) (Element Reference) and [`Array#[]=`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D-3D) (Element Assignment) methods.
+Let's explore:
+
+-   [`Array#[]`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D) (Element Reference)
+-   [`Array#[]=`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D-3D) (Element Assignment)
 
 ```ruby
 > developers[0]
-=> "Ken"
+=> "Roberto"
 developers[-1]
-=> "Kyle"
+=> "Nick"
 > developers[-4] == developers[0]
 => true
 > developers[developers.length]
@@ -80,27 +96,23 @@ developers[-1]
 > developers[-5]
 => nil
 > developers[-3, 2]
-=> ["Kevin", "Khanhnhat"]
-> developers[-5] = 'Aaron'
+=> ["Ben", "Susan"]
+> developers[-5] = 'Jessica'
 IndexError: index -5 too small for array; minimum: -4
 from (pry):4:in ``__pry__''
-> developers[developers.length] = 'Aaron'
-=> "Aaron"
+> developers[developers.length] = 'Jessica'
+=> "Jessica"
 ```
 
-### Code along
-
-We'll work in `bin/code_along.rb` again, modifying and retrieving values from the Arrays we created previously.
-
-### Lab
+### Lab 2
 
 Working in `bin/lab.rb` (storing the results of any access in `tmp` for display):
 
-- Assign `20` to the element at `length+1`.
-- Access the 3rd element from the end for a length of 5.
-- Access element 9 for a length of 5 elements.
-- Assign `[-12, -49]` to the 5th element from the end for a length of 3.
-- Access all the elements starting at index 1.
+-   Assign `20` to the element at `length+1`.
+-   Access the 3rd element from the end of an array length of 5.
+-   Access element 9 for a length of 5 elements.
+-   Assign `[-12, -49]` to the 5th element from the end for a length of 3.
+-   Access all the elements starting at index 1.
 
 In `bin/lab.js` do the same in JavaScript.
 
@@ -108,36 +120,38 @@ In `bin/lab.js` do the same in JavaScript.
 
 ### Demonstration
 
-Let's explore [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C) (Append - also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C)), [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop), [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift), [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift).
+Let's explore
+
+-   [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-push) (Append - also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C))
+-   [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop) (Remove from end)
+-   [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift) (Prepend)
+-   [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift) (Remove from beginning)
 
 ```ruby
-> developers << "Andrew"
-=> ["Ken", "Kevin", "Khanhnhat", "Kyle", "Aaron", "Andrew"]
-> developers.push "Billy"
-=> ["Ken", "Kevin", "Khanhnhat", "Kyle", "Aaron", "Andrew", "Billy"]
-> developers << "Celena" << "Ethan"
-=> ["Ken",
- "Kevin",
- "Khanhnhat",
- "Kyle",
- "Aaron",
- "Andrew",
- "Billy",
- "Celena",
- "Ethan"]
+> developers << "Lou"
+=> ["Roberto", "Ben", "Susan", "Nick", "Jessica", "Lou"]
+> developers.push "Vince"
+=> ["Roberto", "Ben", "Susan", "Nick", "Jessica", "Lou", "Vince"]
+> developers << "Natalie" << "Phil"
+=> ["Roberto",
+ "Ben",
+ "Susan",
+ "Nick",
+ "Jessica",
+ "Lou",
+ "Vince",
+ "Natalie",
+ "Phil"]
 > developers.shift 4
-=> ["Ken", "Kevin", "Khanhnhat", "Kyle"]
+=> ["Roberto", "Ben", "Susan", "Nick"]
 > developers
-=> ["Aaron", "Andrew", "Billy", "Celena", "Ethan"]
+=> ["Jessica", "Lou", "Vince", "Natalie", "Phil"]
 ```
-
-### Code along
-
-We'll work in `bin/code_along.rb` again, adding values to, removing values from, and moving values in the Arrays we created previously.
 
 ### Lab
 
-In `lab.md` describe the differences between the Array methods `push`, `pop`, `unshift`, and `shift` in Ruby and JavaScript.
+In `lab.md` describe the differences between the Array methods `push`, `pop`,
+`unshift`, and `shift` in Ruby and JavaScript.
 
 ## [License](LICENSE)
 
