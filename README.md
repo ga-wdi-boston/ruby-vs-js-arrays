@@ -153,6 +153,36 @@ Let's explore
 In `lab.md` describe the differences between the Array methods `push`, `pop`,
 `unshift`, and `shift` in Ruby and JavaScript.
 
+### Further Practice
+
+Create `bin/story.rb`. In this file, tell a story (of your choice) involving
+multiple characters that enter and leave the story. These characters should be
+held in an array and should be added to and taken out of the story using the
+`push`, `pop`, `shift` and `unshift` methods. Practice using string
+concatenation while printing your story by only referring to your characters
+from their held array (i.e., no hardcoding of names that exist in the array).
+One these requirements are met, feel free to implement more creative string and
+array methods into your story.
+
+For example:
+
+```ruby
+characters = ["Lee", "Adrian", "Bo"]
+
+puts "There once were three friends, #{characters[0]}, #{characters[1]}, and #{characters[2]}."
+
+characters << "Taylor"
+
+puts "#{characters[-2]} befriended #{characters[-1]}, #{characters[0]}\'s known enemy.
+      #{characters[0]} could no longer be their friend."
+
+characters.shift;
+
+puts "#{characters[0]}, #{characters[1]}, and #{characters[2]} needed to think of lunch plans."
+```
+
+Running `ruby bin/story.rb` should print your story for you in the terminal.
+
 ## [License](LICENSE)
 
 Source code distributed under the MIT license. Text and other assets copyright
