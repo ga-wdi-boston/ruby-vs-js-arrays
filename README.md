@@ -19,8 +19,10 @@ By the end of this, students should be able to:
 
 ## Introduction
 
-In Ruby, "Arrays are ordered, integer-indexed collections of any object."
-From that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like JavaScript Arrays.
+In Ruby, "Arrays are ordered, integer-indexed collections of any object." From
+that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like
+JavaScript Arrays.
+
 But there are some important differences.
 
 ## Creating a Ruby Array
@@ -42,21 +44,25 @@ With the literal syntax, we can create an array with initial values.
 ```ruby
 > not_the_same_type = [[], 'one', 2.0, 3]
 => [[], "one", 2.0, 3]
-> developers = ['Roberto', 'Ben', 'Susan', 'Nick']
-=> ["Roberto", "Ben", "Susan", "Nick"]
+> developers = ['Shireen', 'John', 'Arielle', 'Jacob']
+=> ["Shireen", "John", "Arielle", "Jacob"]
 ```
 
 If all of the entries are strings, Ruby provides a (Perl inspired) string
- [quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation) mechanism to create an Array.
+[quoting](https://en.wikibooks.org/wiki/Ruby_Programming/Syntax/Literals#The_.25_Notation)
+mechanism to create an Array.
 
 ```ruby
-> developers = %w{Roberto Ben Susan Nick}
-=> ["Roberto", "Ben", "Susan", "Nick"]
+> developers = %w{Shireen John Arielle Jacob}
+=> ["Shireen", "John", "Arielle", "Jacob"]
 ```
 
 ### Code along
 
-Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new) to create some initialized arrays in `bin/code_along.rb`.  [Creating Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays) has an important caveat when creating Ruby Arrays with default values.
+Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new)
+to create some initialized arrays in `bin/code_along.rb`.  [Creating
+Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays)
+has an important caveat when creating Ruby Arrays with default values.
 
 -   Create an empty array, `lit_array`, using the literal syntax
 
@@ -65,13 +71,15 @@ with 5 elements
 
 -   Create an array, `ten_false_array`, initialized with 10 `false` elements
 
-How does this compare with [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) JavaScript Arrays?
+How does this compare with
+[creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+JavaScript Arrays?
 
 ### Lab 1
 
 In `bin/lab.rb` use a block initializer with `Array.new` to create a Ruby Array
- with ten elements where elements are equal to their index multiplied by 2.
- Store the result and display it on the console with `p <array name>`.
+with ten elements where elements are equal to their index multiplied by 2. Store
+the result and display it on the console with `p <array name>`.
 
 In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
 
@@ -86,9 +94,9 @@ Let's explore:
 
 ```ruby
 > developers[0]
-=> "Roberto"
+=> "Shireen"
 developers[-1]
-=> "Nick"
+=> "Jacob"
 > developers[-4] == developers[0]
 => true
 > developers[developers.length]
@@ -96,17 +104,18 @@ developers[-1]
 > developers[-5]
 => nil
 > developers[-3, 2]
-=> ["Ben", "Susan"]
-> developers[-5] = 'Jessica'
+=> ["John", "Arielle"]
+> developers[-5] = 'Sarah'
 IndexError: index -5 too small for array; minimum: -4
 from (pry):4:in ``__pry__''
-> developers[developers.length] = 'Jessica'
-=> "Jessica"
+> developers[developers.length] = 'Sarah'
+=> "Sarah"
 ```
 
 ### Lab 2
 
-Working in `bin/lab.rb` (storing the results of any access in `tmp` for display):
+Working in `bin/lab.rb` (storing the results of any access in `tmp` for
+display):
 
 -   Assign `20` to the element at `length+1`.
 -   Access the 3rd element from the end of an array length of 5.
@@ -118,34 +127,36 @@ In `bin/lab.js` do the same in JavaScript.
 
 ## Using a Ruby Array as a stack or queue
 
-### Demonstration
+### Let's explore
 
-Let's explore
-
--   [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-push) (Append - also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C))
--   [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop) (Remove from end)
--   [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift) (Prepend)
--   [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift) (Remove from beginning)
+-   [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-push) (Append -
+also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C))
+-   [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop) (Remove from
+end)
+-   [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift)
+(Prepend)
+-   [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift) (Remove
+from beginning)
 
 ```ruby
-> developers << "Lou"
-=> ["Roberto", "Ben", "Susan", "Nick", "Jessica", "Lou"]
-> developers.push "Vince"
-=> ["Roberto", "Ben", "Susan", "Nick", "Jessica", "Lou", "Vince"]
-> developers << "Natalie" << "Phil"
-=> ["Roberto",
- "Ben",
- "Susan",
- "Nick",
- "Jessica",
- "Lou",
- "Vince",
- "Natalie",
- "Phil"]
+> developers << "Misha"
+=> ["Shireen", "John", "Arielle", "Jacob", "Sarah", "Misha"]
+> developers.push "Tara"
+=> ["Shireen", "John", "Arielle", "Jacob", "Sarah", "Misha", "Tara"]
+> developers << "Erin" << "Jon"
+=> ["Shireen",
+  "John",
+  "Arielle",
+  "Jacob",
+  "Sarah",
+  "Misha",
+  "Tara",
+  "Erin",
+  "Jon"]
 > developers.shift 4
-=> ["Roberto", "Ben", "Susan", "Nick"]
+=> ["Shireen", "John", "Arielle", "Jacob"]
 > developers
-=> ["Jessica", "Lou", "Vince", "Natalie", "Phil"]
+=> ["Sarah", "Misha", "Tara", "Erin", "Jon"]
 ```
 
 ### Lab
