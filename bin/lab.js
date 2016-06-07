@@ -6,6 +6,14 @@
 // with ten elements where elements are equal to their index multiplied by 2.
 // Store the result and display it on the console with `console.log(<array name>)`
 
+let array_times_2 = new Array(10);
+
+for ( let i = 0; i < array_times_2.length; i++ ) {
+  let value = i * 2;
+  array_times_2[i] = value;
+}
+
+console.log(array_times_2);
 
 // Lab 2
 

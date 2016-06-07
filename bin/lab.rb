@@ -4,6 +4,8 @@
 # where elements are equal to their index multiplied by 2.
 # Store the result and display it on the console with `p <array name>`
 
+array_times_2 = Array.new(10) { |index| index * 2 }
+puts array_times_2
 
 ## Lab 2 ##
 
