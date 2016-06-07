@@ -85,7 +85,7 @@ In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
 
 ## Assigning and accessing elements in a Ruby Array
 
-### Demonstration
+### Demo
 
 Let's explore:
 
