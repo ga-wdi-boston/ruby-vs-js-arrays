@@ -1,3 +1,4 @@
+
 ## Lab 1 ##
 
 # Use `Array.new` to create a Ruby Array with ten elements
@@ -19,5 +20,5 @@ puts array_times_2
 
 # Access all the elements starting at index 1.
 
-binding.pry
-""
+# binding.pry
+# ""

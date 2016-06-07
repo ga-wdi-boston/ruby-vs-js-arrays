@@ -15,6 +15,10 @@ for ( let i = 0; i < array_times_2.length; i++ ) {
 
 console.log(array_times_2);
 
+// Chaning example
+//
+// new Array(10).fill(2).map((e, i) => e * i)
+
 // Lab 2
 
 // Assign `20` to the element at `length+1`.
