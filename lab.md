@@ -6,10 +6,10 @@ Briefly describe the similarities and differences between these methods in Ruby 
 
 Include differences in return value and chain-ablilty
 
-method | Differences | Similarities
--- | -- | --
-`push` | |
-`<<` (compare to`push`) | |
-`pop` | |
-`unshift` | |
-`shift` | |
+| method                  | Differences | Similarities |
+|-------------------------|-------------|--------------|
+| `push`                  |             |              |
+| `<<` (compare to`push`) |             |              |
+| `pop`                   |             |              |
+| `unshift`               |             |              |
+| `shift`                 |             |              |
