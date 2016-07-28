@@ -75,14 +75,6 @@ How does this compare with
 [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 JavaScript Arrays?
 
-### Lab: Create Ruby Array
-
-In [bin/lab.rb](bin/lab.rb) use a block initializer with `Array.new` to create a Ruby Array
-with ten elements where elements are equal to their index multiplied by 2. Store
-the result and display it on the console with `p <array name>`.
-
-In [bin/lab.js](bin/lab.js) do the same in JavaScript with `new Array` and a method chain.
-
 ## Assigning and accessing elements in a Ruby Array
 
 ### Demo
@@ -114,8 +106,8 @@ from (pry):4:in ``__pry__''
 
 ### Lab: Storing and Accessing Array Elements
 
-Working in [bin/lab.rb](bin/lab.rb) (storing the results of any access in `tmp` for
-display):
+Working in [bin/lab.rb](bin/lab.rb) (storing the results of any access in `tmp`
+for display):
 
 -   Assign `20` to the element at `length+1`.
 -   Access the 3rd element from the end of an array length of 5.
@@ -193,6 +185,15 @@ Running `ruby bin/story.rb` should print your story for you in the terminal.
 
 In `lab.md` describe the differences between the Array methods `push`, `pop`,
 `unshift`, and `shift` in Ruby and JavaScript.
+
+### Bonus: Create Ruby Array Using a Block Initializer
+
+In [bin/lab.rb](bin/lab.rb) use a block initializer with `Array.new` to create a
+ Ruby Array with ten elements where elements are equal to their index multiplied
+by 2. Store the result and display it on the console with `p <array name>`.
+
+In [bin/lab.js](bin/lab.js) do the same in JavaScript with `new Array` and a
+method chain.
 
 ## [License](LICENSE)
 
