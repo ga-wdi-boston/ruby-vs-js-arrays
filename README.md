@@ -30,7 +30,7 @@ But there are some important differences.
 As with JavaScript, Ruby Arrays can be created using literals (technically, a
 constructor method on class Array) and with a constructor.
 
-### Demonstration
+### Demo
 
 ```ruby
 > developers = []
@@ -44,8 +44,8 @@ With the literal syntax, we can create an array with initial values.
 ```ruby
 > not_the_same_type = [[], 'one', 2.0, 3]
 => [[], "one", 2.0, 3]
-> developers = ['Shireen', 'John', 'Arielle', 'Jacob']
-=> ["Shireen", "John", "Arielle", "Jacob"]
+> developers = ['Natasha', 'Cliff', 'Natalia', 'Alex']
+=> ["Natasha", "Cliff", "Natalia", "Alex"]
 ```
 
 If all of the entries are strings, Ruby provides a (Perl inspired) string
@@ -53,14 +53,14 @@ If all of the entries are strings, Ruby provides a (Perl inspired) string
 mechanism to create an Array.
 
 ```ruby
-> developers = %w{Shireen John Arielle Jacob}
-=> ["Shireen", "John", "Arielle", "Jacob"]
+> developers = %w{Natasha Cliff Natalia Alex}
+=> ["Natasha", "Cliff", "Natalia", "Alex"]
 ```
 
-### Code along
+### Code Along
 
 Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new)
-to create some initialized arrays in `bin/code_along.rb`.  [Creating
+to create some initialized arrays in [bin/code_along.rb](bin/code_along.rb).  [Creating
 Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays)
 has an important caveat when creating Ruby Arrays with default values.
 
@@ -75,13 +75,13 @@ How does this compare with
 [creating](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 JavaScript Arrays?
 
-### Lab 1
+### Lab: Create Ruby Array
 
-In `bin/lab.rb` use a block initializer with `Array.new` to create a Ruby Array
+In [bin/lab.rb](bin/lab.rb) use a block initializer with `Array.new` to create a Ruby Array
 with ten elements where elements are equal to their index multiplied by 2. Store
 the result and display it on the console with `p <array name>`.
 
-In `bin/lab.js` do the same in JavaScript with `new Array` and a method chain.
+In [bin/lab.js](bin/lab.js) do the same in JavaScript with `new Array` and a method chain.
 
 ## Assigning and accessing elements in a Ruby Array
 
@@ -94,9 +94,9 @@ Let's explore:
 
 ```ruby
 > developers[0]
-=> "Shireen"
+=> "Natasha"
 developers[-1]
-=> "Jacob"
+=> "Alex"
 > developers[-4] == developers[0]
 => true
 > developers[developers.length]
@@ -104,17 +104,17 @@ developers[-1]
 > developers[-5]
 => nil
 > developers[-3, 2]
-=> ["John", "Arielle"]
-> developers[-5] = 'Sarah'
+=> ["Cliff", "Natalia"]
+> developers[-5] = 'Ying'
 IndexError: index -5 too small for array; minimum: -4
 from (pry):4:in ``__pry__''
-> developers[developers.length] = 'Sarah'
-=> "Sarah"
+> developers[developers.length] = 'Ying'
+=> "Ying"
 ```
 
-### Lab 2
+### Lab: Storing and Accessing Array Elements
 
-Working in `bin/lab.rb` (storing the results of any access in `tmp` for
+Working in [bin/lab.rb](bin/lab.rb) (storing the results of any access in `tmp` for
 display):
 
 -   Assign `20` to the element at `length+1`.
@@ -123,11 +123,11 @@ display):
 -   Assign `[-12, -49]` to the 5th element from the end for a length of 3.
 -   Access all the elements starting at index 1.
 
-In `bin/lab.js` do the same in JavaScript.
+In [bin/lab.js](bin/lab.js) do the same in JavaScript.
 
 ## Using a Ruby Array as a stack or queue
 
-### Let's explore
+### Code Along: Let's Explore
 
 -   [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-push) (Append -
 also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C))
@@ -139,34 +139,29 @@ end)
 from beginning)
 
 ```ruby
-> developers << "Misha"
-=> ["Shireen", "John", "Arielle", "Jacob", "Sarah", "Misha"]
-> developers.push "Tara"
-=> ["Shireen", "John", "Arielle", "Jacob", "Sarah", "Misha", "Tara"]
-> developers << "Erin" << "Jon"
-=> ["Shireen",
-  "John",
-  "Arielle",
-  "Jacob",
-  "Sarah",
-  "Misha",
-  "Tara",
-  "Erin",
-  "Jon"]
+> developers << "Jordan"
+=> ["Natasha", "Cliff", "Natalia", "Alex", "Ying", "Jordan"]
+> developers.push "Josh"
+=> ["Natasha", "Cliff", "Natalia", "Alex", "Ying", "Jordan", "Josh"]
+> developers << "Gabe" << "David"
+=> ["Natasha",
+  "Cliff",
+  "Natalia",
+  "Alex",
+  "Ying",
+  "Jordan",
+  "Josh",
+  "Gabe",
+  "David"]
 > developers.shift 4
-=> ["Shireen", "John", "Arielle", "Jacob"]
+=> ["Natasha", "Cliff", "Natalia", "Alex"]
 > developers
-=> ["Sarah", "Misha", "Tara", "Erin", "Jon"]
+=> ["Ying", "Jordan", "Josh", "Gabe", "David"]
 ```
 
-### Lab
+### Lab: Push and Pop Story
 
-In `lab.md` describe the differences between the Array methods `push`, `pop`,
-`unshift`, and `shift` in Ruby and JavaScript.
-
-### Further Practice
-
-Create `bin/story.rb`. In this file, tell a story (of your choice) involving
+Create [bin/story.rb](bin/story.rb). In this file, tell a story (of your choice) involving
 multiple characters that enter and leave the story. These characters should be
 held in an array and should be added to and taken out of the story using the
 `push`, `pop`, `shift` and `unshift` methods. Practice using string
@@ -193,6 +188,11 @@ puts "#{characters[0]}, #{characters[1]}, and #{characters[2]} needed to think o
 ```
 
 Running `ruby bin/story.rb` should print your story for you in the terminal.
+
+### Lab: Compare and Contrast
+
+In `lab.md` describe the differences between the Array methods `push`, `pop`,
+`unshift`, and `shift` in Ruby and JavaScript.
 
 ## [License](LICENSE)
 
