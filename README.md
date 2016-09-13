@@ -174,7 +174,7 @@ characters << "Taylor"
 puts "#{characters[-2]} befriended #{characters[-1]}, #{characters[0]}\'s known enemy.
       #{characters[0]} could no longer be their friend."
 
-characters.shift;
+characters.shift
 
 puts "#{characters[0]}, #{characters[1]}, and #{characters[2]} needed to think of lunch plans."
 ```
@@ -197,5 +197,6 @@ method chain.
 
 ## [License](LICENSE)
 
-Source code distributed under the MIT license. Text and other assets copyright
-General Assembly, Inc., all rights reserved.
+1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
+1.  All software code is licensed under GNU GPLv3. For commercial use or alternative
+licensing, please contact legal@ga.co.
