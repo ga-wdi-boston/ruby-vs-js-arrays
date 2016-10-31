@@ -195,9 +195,6 @@ In [bin/lab.rb](bin/lab.rb) use a block initializer with `Array.new` to create a
  Ruby Array with ten elements where elements are equal to their index multiplied
 by 2. Store the result and display it on the console with `p <array name>`.
 
-In [bin/lab.js](bin/lab.js) do the same in JavaScript with `new Array` and a
-method chain.
-
 ## [License](LICENSE)
 
 1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
