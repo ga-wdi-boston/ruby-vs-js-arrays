@@ -1,6 +1,6 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
-# Ruby Arrays (versus JavaScript Arrays)
+# Ruby Arrays
 
 ## Instructions
 
@@ -10,7 +10,6 @@ Fork, clone, branch (training), `bundle install`
 
 By the end of this, students should be able to:
 
--   Contrast Ruby Arrays with JavaScript Arrays.
 -   Create a Ruby Array using both the literal (`[]`) and `new` constructors.
 -   Assign an element at a specific index in a Ruby Array.
 -   Access elements by index in a Ruby Array.
@@ -20,7 +19,7 @@ By the end of this, students should be able to:
 ## Introduction
 
 In Ruby, "Arrays are ordered, integer-indexed collections of any object." From
-that, [Ruby Arrays](http://ruby-doc.org/core-2.2.4/Array.html) seem a lot like
+that, [Ruby Arrays](http://ruby-doc.org/core-2.3.1/Array.html) seem a lot like
 JavaScript Arrays.
 
 But there are some important differences.
@@ -44,8 +43,8 @@ With the literal syntax, we can create an array with initial values.
 ```ruby
 > not_the_same_type = [[], 'one', 2.0, 3]
 => [[], "one", 2.0, 3]
-> developers = ['Natasha', 'Cliff', 'Natalia', 'Alex']
-=> ["Natasha", "Cliff", "Natalia", "Alex"]
+> developers = ['Caleb', 'Joel', 'Julia', 'Adam']
+=> ["Caleb", "Joel", "Julia", "Adam"]
 ```
 
 If all of the entries are strings, Ruby provides a (Perl inspired) string
@@ -53,15 +52,15 @@ If all of the entries are strings, Ruby provides a (Perl inspired) string
 mechanism to create an Array.
 
 ```ruby
-> developers = %w{Natasha Cliff Natalia Alex}
-=> ["Natasha", "Cliff", "Natalia", "Alex"]
+> developers = %w{Caleb Joel Julia Adam}
+=> ["Caleb", "Joel", "Julia", "Adam"]
 ```
 
 ### Code Along
 
-Let's use [Array::new](http://ruby-doc.org/core-2.2.4/Array.html#method-c-new)
+Let's use [Array::new](http://ruby-doc.org/core-2.3.1/Array.html#method-c-new)
 to create some initialized arrays in [bin/code_along.rb](bin/code_along.rb).  [Creating
-Arrays](http://ruby-doc.org/core-2.2.4/Array.html#class-Array-label-Creating+Arrays)
+Arrays](http://ruby-doc.org/core-2.3.1/Array.html#class-Array-label-Creating+Arrays)
 has an important caveat when creating Ruby Arrays with default values.
 
 -   Create an empty array, `lit_array`, using the literal syntax
@@ -81,14 +80,14 @@ JavaScript Arrays?
 
 Let's explore:
 
--   [`Array#[]`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D) (Element Reference)
--   [`Array#[]=`](http://ruby-doc.org/core-2.2.4/Array.html#method-i-5B-5D-3D) (Element Assignment)
+-   [`Array#[]`](http://ruby-doc.org/core-2.3.1/Array.html#method-i-5B-5D) (Element Reference)
+-   [`Array#[]=`](http://ruby-doc.org/core-2.3.1/Array.html#method-i-5B-5D-3D) (Element Assignment)
 
 ```ruby
 > developers[0]
-=> "Natasha"
+=> "Caleb"
 developers[-1]
-=> "Alex"
+=> "Adam"
 > developers[-4] == developers[0]
 => true
 > developers[developers.length]
@@ -96,8 +95,8 @@ developers[-1]
 > developers[-5]
 => nil
 > developers[-3, 2]
-=> ["Cliff", "Natalia"]
-> developers[-5] = 'Ying'
+=> ["Joel", "Julia"]
+> developers[-5] = 'Kira'
 IndexError: index -5 too small for array; minimum: -4
 from (pry):4:in ``__pry__''
 > developers[developers.length] = 'Ying'
@@ -121,34 +120,34 @@ In [bin/lab.js](bin/lab.js) do the same in JavaScript.
 
 ### Code Along: Let's Explore
 
--   [Array#push](http://ruby-doc.org/core-2.2.4/Array.html#method-i-push) (Append -
-also [Array#<<](http://ruby-doc.org/core-2.2.4/Array.html#method-i-3C-3C))
--   [Array#pop](http://ruby-doc.org/core-2.2.4/Array.html#method-i-pop) (Remove from
+-   [Array#push](http://ruby-doc.org/core-2.3.1/Array.html#method-i-push) (Append -
+also [Array#<<](http://ruby-doc.org/core-2.3.1/Array.html#method-i-3C-3C))
+-   [Array#pop](http://ruby-doc.org/core-2.3.1/Array.html#method-i-pop) (Remove from
 end)
--   [Array#unshift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-unshift)
+-   [Array#unshift](http://ruby-doc.org/core-2.3.1/Array.html#method-i-unshift)
 (Prepend)
--   [Array#shift](http://ruby-doc.org/core-2.2.4/Array.html#method-i-shift) (Remove
+-   [Array#shift](http://ruby-doc.org/core-2.3.1/Array.html#method-i-shift) (Remove
 from beginning)
 
 ```ruby
-> developers << "Jordan"
-=> ["Natasha", "Cliff", "Natalia", "Alex", "Ying", "Jordan"]
-> developers.push "Josh"
-=> ["Natasha", "Cliff", "Natalia", "Alex", "Ying", "Jordan", "Josh"]
-> developers << "Gabe" << "David"
-=> ["Natasha",
-  "Cliff",
-  "Natalia",
-  "Alex",
-  "Ying",
-  "Jordan",
-  "Josh",
-  "Gabe",
-  "David"]
+> developers << "Kosta"
+=> ["Caleb", "Joel", "Julia", "Adam", "Kira", "Kosta"]
+> developers.push "Rick"
+=> ["Caleb", "Joel", "Julia", "Adam", "Kira", "Kosta", "Rick"]
+> developers << "Johnathan" << "Peter"
+=> ["Caleb",
+  "Joel",
+  "Julia",
+  "Adam",
+  "Kira",
+  "Kosta",
+  "Rick",
+  "Johnathan",
+  "Peter"]
 > developers.shift 4
-=> ["Natasha", "Cliff", "Natalia", "Alex"]
+=> ["Caleb", "Joel", "Julia", "Adam"]
 > developers
-=> ["Ying", "Jordan", "Josh", "Gabe", "David"]
+=> ["Kira", "Kosta", "Rick", "Johnathan", "Peter"]
 ```
 
 ### Lab: Push and Pop Story
