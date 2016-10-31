@@ -184,11 +184,6 @@ puts "#{characters[0]}, #{characters[1]}, and #{characters[2]} needed to think o
 
 Running `ruby bin/story.rb` should print your story for you in the terminal.
 
-### Lab: Compare and Contrast
-
-In `lab.md` describe the differences between the Array methods `push`, `pop`,
-`unshift`, and `shift` in Ruby and JavaScript.
-
 ### Bonus: Create Ruby Array Using a Block Initializer
 
 In [bin/lab.rb](bin/lab.rb) use a block initializer with `Array.new` to create a
