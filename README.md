@@ -114,8 +114,6 @@ for display):
 -   Assign `[-12, -49]` to the 5th element from the end.
 -   Access all the elements starting at index 1.
 
-In [bin/lab.js](bin/lab.js) do the same in JavaScript.
-
 ## Using a Ruby Array as a stack or queue
 
 ### Code Along: Let's Explore
