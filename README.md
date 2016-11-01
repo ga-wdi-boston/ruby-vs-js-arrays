@@ -98,7 +98,6 @@ developers[-1]
 => ["Joel", "Julia"]
 > developers[-5] = 'Kira'
 IndexError: index -5 too small for array; minimum: -4
-from (pry):4:in ``__pry__''
 > developers[developers.length] = 'Kira'
 => "Kira"
 ```
